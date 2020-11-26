@@ -19,7 +19,7 @@
     --error: #FE8E8E;
     --textError: #D80303;
     --danger: #EA3737;
-    --hardDanger:#BE1010;
+    --hardDanger: #BE1010;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 
 .title-blog {
     font-family: 'Nerko One', cursive;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 a {
@@ -54,7 +54,7 @@ a {
     padding: 10px 30px;
 }
 
-.menu > ul {
+.list-menu {
     display: flex;
     list-style: none;
 }
@@ -108,12 +108,14 @@ main > section {
     align-items: center;
 
 }
-.container-button-entries>.btn-generic{
+
+.container-button-entries > .btn-generic {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1em;
 }
+
 .entries > .container-button-entries > .btn-generic {
     width: 30em;
     height: 3.5em;
@@ -228,7 +230,7 @@ footer {
 .info-user {
     width: 100%;
     position: fixed;
-    top: 11em;
+    top: 13em;
 }
 
 .info-user > h3 {
@@ -273,120 +275,278 @@ textarea {
     outline: none;
     resize: none;
 }
-select{
+
+select {
     outline: none;
 }
-.createCategories>#register_form>.form-group{
+
+.createCategories > #register_form > .form-group {
     align-items: center;
     justify-content: space-between;
 }
-.link-entrie>h2{
+
+.link-entrie > h2 {
     color: black;
 }
-.body-entrie>a{
+
+.body-entrie > a {
     color: black;
 }
-.body-entrie>.read-more{
+
+.body-entrie > .read-more {
     color: var(--colorTitles);
 }
-.title-entrie{
+
+.title-entrie {
     margin-bottom: .5em;
 }
-p.category{
+
+p.category {
     margin-bottom: 13px;
 }
-.body-entrie{
+
+.body-entrie {
     padding-right: 9em;
 }
-.btn-danger{
+
+.btn-danger {
     background-color: var(--danger);
 }
-.btn-danger:hover{
+
+.btn-danger:hover {
     background-color: var(--hardDanger);
 }
-.container-management-entry{
+
+.container-management-entry {
     display: flex;
     justify-content: space-between;
     margin-right: 2em;
 }
-.container-management-entry > button{
+
+.container-management-entry > button {
     margin-right: .5em;
 }
-.search-box{
-    position: fixed;
+
+.search-box {
     padding-bottom: 20px;
 }
-.search-box>form{
+
+.search-box > form {
     display: flex;
     flex-direction: column;
 }
-.search-box>form>#search{
-   padding: .5em;
+
+.search-box > form > #search {
+    padding: .5em;
 }
-.search-box>form>input{
+
+.search-box > form > input {
     margin-bottom: 10px;
 }
-header>.menu>figure{
+
+header > .menu > figure {
     text-align: right;
     color: var(--colorTitles);
     width: 100%;
     display: none;
 }
-header>.menu>figure>svg{
+
+header > .menu > figure > svg {
     font-size: 30px;
 }
-.menu-user{
+
+.menu-user {
     display: none;
 }
-@media screen and (max-width: 768px){
-    header>.menu{
+
+#menu_button, #close_button, #menu-user {
+    border: none;
+    color: var(--colorTitles);
+    font-size: 25px;
+
+}
+
+#close_button {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 500;
+}
+
+@media screen and (max-width: 768px) {
+    header > .menu {
         flex-direction: column;
     }
-    header>.menu>figure{
+
+    header > .menu > figure {
         display: block;
     }
-    header>.menu>ul{
-        display: none;
+
+    .list-menu {
+        visibility: hidden;
+        position: fixed;
+        opacity: 0;
     }
-    body>main{
+
+    body > main {
         flex-direction: column;
     }
-    body>main>section{
+
+    body > main > section {
         width: 100%;
     }
-    .body-entrie{
+
+    .body-entrie {
         padding-right: 0;
     }
+
     .container-management-entry {
         margin-right: 0;
     }
-    .container-management-entry >.btn-generic{
+
+    .container-management-entry > .btn-generic {
         width: 10em;
     }
-    .title-entries{
+
+    .title-entries {
         font-size: 2.2em;
     }
-    .search-box{
+
+    .search-box {
         position: static;
     }
-    .info-user{
+
+    .info-user {
         position: static;
     }
-    .menu-user{
+
+    .menu-user {
         width: 100%;
         display: flex;
         justify-content: flex-end;
         margin-top: 15px;
 
     }
-    .menu-user>p{
+
+    .menu-user > p {
         margin-right: 1em;
     }
-    .menu-user>figure>svg{
+
+    .menu-user > p:hover {
+        border-bottom: 3px solid var(--colorTitles);
+        transition: .3s;
+    }
+
+    .menu-user > figure > svg {
         color: var(--colorTitles);
         font-size: 25px;
     }
-    aside{
+
+    aside {
+        position: fixed;
+        visibility: hidden;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 25px 20px;
+        height: 100%;
+    }
+
+    .list-menu.show {
+        visibility: visible;
+        opacity: 1;
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        top: 0;
+        height: 100vh;
+        background-color: var(--subTitles);
+        transition: .3s;
+    }
+
+    .item-nav {
+        color: white;
+        font-size: 2em;
+    }
+
+    #close_button.show {
+        visibility: visible;
+        opacity: 1;
+        z-index: 100;
+        background: none;
+        font-size: 32px;
+        right: 20px;
+    }
+
+    #close_button.show > :first-child {
+        color: white;
+    }
+
+    .list-menu.show > li {
+        margin: 0;
+    }
+
+    .hidden {
         display: none;
+    }
+
+    .form-login.show {
+        visibility: visible;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: var(--subTitles);
+        transition: .3s;
+    }
+
+    .form-login__form {
+        border: 1px solid var(--colorTitles);
+    }
+
+    .form-group > label {
+        color: white;
+    }
+
+    .form-login__form {
+        margin-bottom: 1.5em;
+    }
+
+    .close_button {
+        position: fixed;
+        top: 0;
+        right: 10px;
+        z-index: 200;
+    }
+
+    .info-user {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container-buttons {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-user > h3 > span {
+        color: white;
+    }
+
+    .createCategories > form {
+        width: 100%;
+    }
+
+    .form-login__form.categorie > .form-group > label {
+        color: black;
+    }
+
+    .createCategories > form >.form-group{
+        flex-direction: column;
     }
 }

@@ -12,10 +12,14 @@ include_once './includes/head.php';
 <?php
 include_once './includes/header.php';
 ?>
+<figure class="close_button">
+    <button id="close_button"><i class="fas fa-times" ></i> <!-- uses solid style -->
+    </button>
+</figure>
 <main>
     <section class="createCategories">
         <h1 class="title-entries">Mi Perfil</h1>
-        <form action="updateProfile.php" id="register_form" method="post" class="form-login__form">
+        <form action="updateProfile.php" id="register_form" method="post" class="form-login__form categorie">
             <div class="header-form">
                 <h3>Mi Perfil</h3>
             </div>
@@ -49,6 +53,7 @@ include_once './includes/header.php';
     include_once './includes/sidebar.php';
     ?>
 </main>
+<script src="./js/menu.js"></script>
 
 </body>
 </html>

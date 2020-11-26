@@ -11,6 +11,10 @@ $entries = getEntries($conexion);
 <?php
 include_once './includes/header.php'
 ?>
+<figure class="close_button">
+    <button id="close_button"><i class="fas fa-times" ></i> <!-- uses solid style -->
+    </button>
+</figure>
 <main>
     <section class="entries">
         <h1 class="title-entries">Ultimas entradas</h1>
@@ -58,4 +62,6 @@ include_once './includes/header.php'
         }
     }
 </script>
+<script src="./js/menu.js"></script>
+
 </html>

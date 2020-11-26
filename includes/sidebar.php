@@ -1,4 +1,4 @@
-<aside class="form-login">
+<aside class="form-login" id="aside-bar">
     <div class="search-box" id="search-box">
         <form action="./search.php" method="post"  id="form-search">
             <input type="text" name="search" id="search">

@@ -12,6 +12,10 @@ include_once './includes/head.php';
 <?php
 include_once './includes/header.php';
 ?>
+<figure class="close_button">
+    <button id="close_button"><i class="fas fa-times" ></i> <!-- uses solid style -->
+    </button>
+</figure>
 <main>
     <section class="createCategories">
         <h1 class="title-entries">Crear Entradas</h1>
@@ -53,6 +57,7 @@ include_once './includes/header.php';
     include_once './includes/sidebar.php';
     ?>
 </main>
+<script src="./js/menu.js"></script>
 
 </body>
 </html>

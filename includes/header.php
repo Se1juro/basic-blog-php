@@ -9,9 +9,10 @@ $categories = getCategories($conexion);
             <a href="./index.php">Daniel Morales</a>
         </h1>
         <figure>
-            <i class="fas fa-bars"></i> <!-- uses solid style -->
+            <button id="menu_button"><i class="fas fa-bars" ></i> <!-- uses solid style -->
+            </button>
         </figure>
-        <ul>
+        <ul id="list-menu" class="list-menu">
             <?php if (!empty($categories)): ?>
                 <?php while ($categorie = mysqli_fetch_assoc($categories)): ?>
                     <li>
@@ -29,7 +30,7 @@ $categories = getCategories($conexion);
         </ul>
         <div class="menu-user">
             <p>Menu de Usuario</p>
-            <figure><i class="fas fa-ellipsis-v"></i></figure>
+            <button id="menu-user"><i class="fas fa-ellipsis-v"></i></button>
         </div>
     </nav>
 </header>
