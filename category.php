@@ -7,7 +7,7 @@ include_once './helpers/getData.php';
 $entries = getEntries($conexion, null, $_GET['id']);
 $category = getCategory($conexion, $_GET['id']);
 if (empty($category)) {
-    header('Location: index.php');
+    header('Location: Coche.php');
 }
 ?>
 

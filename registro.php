@@ -51,11 +51,11 @@ if (isset($_POST)) {
             $_SESSION['complete'] = 'El Registro ha sido exitoso';
         } else {
             $_SESSION['errors']['general'] = 'Error al tratar de registrar el usuario';
-            header('Location:index.php#register_form');
+            header('Location:Coche.php#register_form');
         }
     } else {
         $_SESSION['errors'] = $errors;
-        header('Location:index.php#register_form');
+        header('Location:Coche.php#register_form');
     }
 }
-header('Location:index.php');
+header('Location:Coche.php');

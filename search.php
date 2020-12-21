@@ -7,7 +7,7 @@ include_once './helpers/getData.php';
 if (isset($_POST)) {
     $search = getEntries($conexion, null, null, $_POST['search']);
 } else {
-    header('Location: index.php');
+    header('Location: Coche.php');
 }
 ?>
 

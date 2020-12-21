@@ -6,7 +6,7 @@ include_once './includes/head.php';
 include_once './helpers/getData.php';
 $entry = getEntry($conexion, $_GET['id']);
 if (empty($entry)) {
-    header('Location: index.php');
+    header('Location: Coche.php');
 }
 ?>
 

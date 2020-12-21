@@ -36,7 +36,7 @@ if (isset($_POST)) {
         $insert = mysqli_query($conexion, $query);
         if ($insert) {
             if ($_GET['edit']) {
-                header('Location: index.php');
+                header('Location: Coche.php');
             } else {
                 header('Location: editEntry.php?id=' . $_GET['edit']);
             }
