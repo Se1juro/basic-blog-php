@@ -6,45 +6,45 @@ include_once './includes/head.php';
 include_once './helpers/getData.php';
 $entry = getEntry($conexion, $_GET['id']);
 if (empty($entry)) {
-    header('Location: Coche.php');
+    header('Location: index.php');
 }
 ?>
 
 <body>
-<?php
-include_once './includes/header.php'
-?>
-<figure class="close_button">
-    <button id="close_button"><i class="fas fa-times" ></i> <!-- uses solid style -->
-    </button>
-</figure>
-<main>
-    <section class="entries">
-        <h1 class="title-entries"> <?= $entry['titulo'] ?></h1>
-                <article class="entries">
-                    <h2 class="title-entrie"><?= $entry['Autor'] ?></h2>
-                    <p class="category"><?= $entry['Categoria'] . ' | <strong>' . $entry['fecha'] . '</strong>' ?></p>
-                    <p class="body-entrie">
-                        <?= $entry['descripcion'] ?>
-                    </p>
-                </article>
-        <?php if (isset($_SESSION['user']) && $_SESSION['user']['id'] == $entry['usuario_id']): ?>
-            <div class="container-management-entry">
-                <a href="deleteEntry.php?id=<?=$entry['id']?>" class="btn-generic btn-danger">
-                    Eliminar Entrada
-                </a>
-                <a href="editEntry.php?id=<?=$entry['id']?>" class="btn-generic">
-                    Editar Entrada
-                </a>
-            </div>
-        <?php endif;?>
-    </section>
-    <?php include_once './includes/sidebar.php' ?>
-</main>
-<?php include_once './includes/footer.php' ?>
+    <?php
+    include_once './includes/header.php'
+    ?>
+    <figure class="close_button">
+        <button id="close_button"><i class="fas fa-times"></i> <!-- uses solid style -->
+        </button>
+    </figure>
+    <main>
+        <section class="entries">
+            <h1 class="title-entries"> <?= $entry['titulo'] ?></h1>
+            <article class="entries">
+                <h2 class="title-entrie"><?= $entry['Autor'] ?></h2>
+                <p class="category"><?= $entry['Categoria'] . ' | <strong>' . $entry['fecha'] . '</strong>' ?></p>
+                <p class="body-entrie">
+                    <?= $entry['descripcion'] ?>
+                </p>
+            </article>
+            <?php if (isset($_SESSION['user']) && $_SESSION['user']['id'] == $entry['usuario_id']) : ?>
+                <div class="container-management-entry">
+                    <a href="deleteEntry.php?id=<?= $entry['id'] ?>" class="btn-generic btn-danger">
+                        Eliminar Entrada
+                    </a>
+                    <a href="editEntry.php?id=<?= $entry['id'] ?>" class="btn-generic">
+                        Editar Entrada
+                    </a>
+                </div>
+            <?php endif; ?>
+        </section>
+        <?php include_once './includes/sidebar.php' ?>
+    </main>
+    <?php include_once './includes/footer.php' ?>
 </body>
 <script>
-    window.onscroll = function () {
+    window.onscroll = function() {
         addStickyHeader()
     };
 

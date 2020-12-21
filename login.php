@@ -28,4 +28,4 @@ if (isset($_POST)) {
         $_SESSION['error_login'] = 'Usuario no encontrado, por favor verifica bien tus datos';
     }
 }
-header('Location: Coche.php');
+header('Location: index.php');

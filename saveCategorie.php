@@ -14,4 +14,4 @@ if (isset($_POST)) {
         $insert = mysqli_query($conexion, $query);
     }
 }
-header('Location:Coche.php');
+header('Location:index.php');
